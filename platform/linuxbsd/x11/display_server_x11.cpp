@@ -2758,6 +2758,8 @@ void DisplayServerX11::window_set_mode(WindowMode p_mode, WindowID p_window) {
 		case WINDOW_MODE_MAXIMIZED: {
 			_set_wm_maximized(p_window, false);
 		} break;
+		default:
+			break;
 	}
 
 	switch (p_mode) {
@@ -2787,6 +2789,8 @@ void DisplayServerX11::window_set_mode(WindowMode p_mode, WindowID p_window) {
 		case WINDOW_MODE_MAXIMIZED: {
 			_set_wm_maximized(p_window, true);
 		} break;
+		default:
+			break;
 	}
 }
 
