@@ -1,11 +1,11 @@
-name: 🪲 Godot CPP
+name: 🪲 Godot CPP 测试
 on:
   workflow_call:
 
-# Global Settings
+# 全局设置
 env:
   # Used for the cache key. Add version suffix to force clean build.
-  GODOT_BASE_BRANCH: master
+  GODOT_BASE_BRANCH: main
   # Used for the godot-cpp checkout.
   GODOT_CPP_BRANCH: 4.3
 
@@ -57,8 +57,8 @@ jobs:
           SCONS_CACHE_LIMIT: 7168
         run: scons --directory=./godot-cpp/test target=template_debug dev_build=yes verbose=yes
 
-      # - name: Save Godot build cache
-      #   uses: ./.github/actions/godot-cache-save
+      # - name: 保存 WeDot 编译缓存
+      #   uses: ./.github/actions/wedot-cache-save
       #   with:
       #     cache-name: godot-cpp
       #   continue-on-error: true

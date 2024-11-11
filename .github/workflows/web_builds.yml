@@ -1,11 +1,11 @@
-name: 🌐 Web Builds
+name: 🌐 Web 编译测试
 on:
   workflow_call:
 
-# Global Settings
+# 全局设置
 env:
   # Used for the cache key. Add version suffix to force clean build.
-  GODOT_BASE_BRANCH: master
+  GODOT_BASE_BRANCH: main
   SCONSFLAGS: verbose=yes warnings=extra werror=yes debug_symbols=no use_closure_compiler=yes strict_checks=yes
   EM_VERSION: 3.1.64
   EM_CACHE_FOLDER: emsdk-cache
@@ -70,8 +70,8 @@ jobs:
           target: ${{ matrix.target }}
           tests: ${{ matrix.tests }}
 
-      - name: Save Godot build cache
-        uses: ./.github/actions/godot-cache-save
+      - name: 保存 WeDot 编译缓存
+        uses: ./.github/actions/wedot-cache-save
         with:
           cache-name: ${{ matrix.cache-name }}
         continue-on-error: true

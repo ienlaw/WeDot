@@ -1,17 +1,17 @@
-name: Save Godot build cache
-description: Save Godot build cache.
+name: '保存 WeDot 的编译缓存'
+description: '保存 WeDot 的编译缓存。'
 inputs:
   cache-name:
-    description: The cache base name (job name by default).
+    description: '缓存名称（默认为 job 名称，就是 jobs: 的子）。'
     default: ${{ github.job }}
   scons-cache:
-    description: The SCons cache path.
+    description: 'SCons 缓存路径。'
     default: ${{ github.workspace }}/.scons-cache/
 
 runs:
   using: composite
   steps:
-    - name: Save SCons cache directory
+    - name: 缓存 SCons 的缓存目录
       uses: actions/cache/save@v4
       with:
         path: ${{ inputs.scons-cache }}
