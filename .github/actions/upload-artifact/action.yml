@@ -1,22 +1,22 @@
-name: Upload Godot artifact
-description: Upload the Godot artifact.
+name: 上传 WeDot 产物
+description: 上传 WeDot 产物。
 
 inputs:
   name:
-    description: The artifact name.
+    description: 产物名称。
     default: ${{ github.job }}
   path:
-    description: The path to upload.
+    description: 上传路径
     required: true
     default: bin/*
 
 runs:
   using: composite
   steps:
-    - name: Upload Godot Artifact
+    - name: 上传 WeDot 产物
       uses: actions/upload-artifact@v4
       with:
         name: ${{ inputs.name }}
         path: ${{ inputs.path }}
-        # Default is 90 days.
+        # 默认 90 日。
         retention-days: 60

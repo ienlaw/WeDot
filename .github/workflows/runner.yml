@@ -1,4 +1,5 @@
-name: 🔗 测试链
+name: '🔗 测试链'
+description: '每当推送、提交合并请求、合并或手动触发时运行一系列测试。'
 on: [push, pull_request, merge_group, workflow_dispatch]
 
 concurrency:
