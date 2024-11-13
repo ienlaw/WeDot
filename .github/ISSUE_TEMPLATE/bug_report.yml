@@ -1,72 +1,72 @@
-name: Bug report
-description: Report a bug in Godot
+name: 错误报告
+description: 在 WeDot 中报告一个 Bug
 
 body:
   - type: markdown
     attributes:
       value: |
-        When reporting bugs, please follow the guidelines in this template. This helps identify the problem precisely and thus enables contributors to fix it faster.
-        - Write a descriptive issue title above.
-        - The golden rule is to **always open *one* issue for *one* bug**. If you notice several bugs and want to report them, make sure to create one new issue for each of them.
-        - Search [open](https://github.com/godotengine/godot/issues) and [closed](https://github.com/godotengine/godot/issues?q=is%3Aissue+is%3Aclosed) issues to ensure it has not already been reported. If you don't find a relevant match or if you're unsure, don't hesitate to **open a new issue**. The bugsquad will handle it from there if it's a duplicate.
-        - Verify that you are using a [supported Godot version](https://docs.godotengine.org/en/latest/about/release_policy.html). Please always check if your issue is reproducible in the latest version – it may already have been fixed!
-        - If you use a custom build, please test if your issue is reproducible in official builds too. Likewise if you use any C++ modules, GDExtensions, or editor plugins, you should check if the bug is reproducible in a project without these.
+        当报告 Bug 时，请遵循此模板中的指引。这有助于准确识别问题，从而加快负责人的修复速度。
+        - 请在上方写一个描述性的标题。
+        - 请**为每个 Bug 开一个单独的 issue**。如果您发现并想报告多个 Bug，请为每个 Bug 创建一个新的问题。
+        - 请搜索[开放的](https://github.com/WeDot-Engine/WeDot/issues)和[已关闭的](https://github.com/WeDot-Engine/WeDot/issues?q=is%3Aissue+is%3Aclosed) issue，保该问题尚未被报告。如果您没有找到相关问题的 issue 或不确定，请**打开一个新 issue**。如果提出的 issue 是重复的，Bug 跟进小组会处理。
+        - 请确认您使用的是不是[正在维护的 WeDot 版本](https://docs.wedot.top/en/latest/about/release_policy.html)。请检查您的问题是否可以在最新版本中复现——它可能已经被修复了。
+        - 如果您是自己编译构建的，请测试您的问题是否也可以在官方构建中复现。同理，如果您使用任何 C++ 模块、GDExtensions 或编辑器插件，您应该检查在没有这些模块的项目中是否可以复现该 Bug。
 
   - type: textarea
     attributes:
-      label: Tested versions
+      label: 测试版本
       description: |
-        To properly fix a bug, we need to identify if the bug was recently introduced in the engine, or if it was always present.
-        - Please specify the Godot version you found the issue in, including the **Git commit hash** if using a development or non-official build. The exact Godot version (including the commit hash) can be copied by clicking the version shown in the editor (bottom bar) or in the project manager (top bar).
-        - If you can, **please test earlier Godot versions** (previous stable branch, and development snapshots of the current feature release) and, if applicable, newer versions (development snapshots for the next feature release). Mention whether the bug is reproducible or not in the versions you tested. You can find all Godot releases in our [download archive](https://godotengine.org/download/archive/).
-        - The aim is for us to identify whether a bug is a **regression**, i.e. an issue that didn't exist in a previous version, but was introduced later on, breaking existing functionality. For example, if a bug is reproducible in 4.2.stable but not in 4.1.stable, we would like you to test intermediate 4.2 dev and beta snapshots to find which snapshot is the first one where the issue can be reproduced.
+        为了正确修复 Bug，我们需要确定该 Bug 是最近引入引擎的，还是一直存在的。
+        - 请描述您发现问题的 WeDot 版本，包括使用开发或非官方编译构建的 **Git commit 哈希**。确切的 WeDot 版本（包括提交哈希）可以复制通过点击编辑器（底部栏）或项目管理器（顶部栏）中显示的版本。
+        - 如果可以的话，**请测试早期的 WeDot 版本**（之前的稳定分支，以及当前功能发布的开发快照）和，如果适用，更新的版本（下一个功能发布的开发快照）。提及您测试的版本中是否可以复现该 Bug。您可以在我们的 [Github 发行](https://github.com/WeDot-Engine/WeDot/releases)中找到所有 WeDot 发布版本。
+        - 为了确定该 Bug 是否是**回归**，即在先前版本中不存在但在后来引入的问题，破坏了现有功能。例如，如果在 4.2.stable 中可以复现 Bug，但在 4.1.stable 中不能，我们希望您测试中间的 4.2 dev 和 beta 快照，以找到第一个可以复现该问题的快照版本。
       placeholder: |
 
-        - Reproducible in: 4.3.dev [d76c1d0e5], 4.2.stable, 4.2.dev5 and later 4.2 snapshots.
-        - Not reproducible in: 4.1.3.stable, 4.2.dev4 and earlier 4.2 snapshots.
+        - 可以复现于：4.3.dev [d76c1d0e5]，4.2.stable，4.2.dev5 及之后的 4.2 快照。
+        - 无法复现于：4.1.3.stable，4.2.dev4 及之前的 4.2 快照。
     validations:
       required: true
 
   - type: input
     attributes:
-      label: System information
+      label: 系统信息
       description: |
-        - Specify the OS version, and when relevant hardware information.
-        - For issues that are likely OS-specific and/or graphics-related, please specify the CPU model and architecture.
-        - For graphics-related issues, specify the GPU model, driver version, and the rendering backend (GLES2, GLES3, Vulkan).
-        - **Bug reports not including the required information may be closed at the maintainers' discretion.** If in doubt, always include all the requested information; it's better to include too much information than not enough information.
-        - **Starting from Godot 4.1, you can copy this information to your clipboard by using *Help > Copy System Info* at the top of the editor window.**
-      placeholder: Windows 10 - Godot v4.0.3.stable - Vulkan (Forward+) - dedicated NVIDIA GeForce GTX 970 (nvidia, 510.85.02) - Intel Core i7-10700KF CPU @ 3.80GHz (16 Threads)
+        - 操作系统版本和相关的硬件信息。
+        - 对于可能是特定于操作系统的和/或图形相关的问题，请指定 CPU 型号和架构。
+        - 对于图形相关的问题，指定 GPU 型号、驱动程序版本和渲染后端（GLES2、GLES3、Vulkan）。
+        - **不包含所需信息的 Bug 报告可能会被项目负责人关闭。**请确保包含所有以上信息；提供信息过剩总比不足好。
+        - **您可以使用 *帮助 > 复制系统信息* 将此信息复制到剪贴板，位于编辑器窗口的顶部。**
+      placeholder: Windows 10 - WeDot v4.0.3.stable - Vulkan (Forward+) - 独立显卡 NVIDIA GeForce GTX 970 (nvidia, 510.85.02) - Intel Core i7-10700KF CPU @ 3.80GHz (16 核心)
     validations:
       required: true
 
   - type: textarea
     attributes:
-      label: Issue description
+      label: 问题描述
       description: |
-        Describe your issue briefly. What doesn't work, and how do you expect it to work instead?
-        You can include images or videos with drag and drop, and format code blocks or logs with <code>\`\`\`</code> tags, on separate lines before and after the text. (Use <code>\`\`\`gdscript</code> to add GDScript syntax highlighting.)
-        Please do not add code examples or error messages as screenshots, but as text, this helps searching for issues and testing the code. If you are reporting a bug in the editor interface, like the script editor, please provide both a screenshot *and* the text of the code to help with testing.
+        简要描述您的问题。什么出问题了，您觉得它本来应该怎么运作？
+        您可以通过拖放添加图像或视频，并使用 <code>\`\`\`</code> 标签格式化代码块或日志，在文本前后各占一行。（使用 <code>\`\`\`gdscript</code> 添加 GDScript 语法高亮。）
+        请不要用截图添加代码示例或错误消息，而是用文本，这有助于搜索问题和测试代码。如果您报告的是编辑器界面中的 Bug，如脚本编辑器，请同时提供截图和代码文本以帮助测试。
     validations:
       required: true
 
   - type: textarea
     attributes:
-      label: Steps to reproduce
+      label: 复现步骤
       description: |
-        List of steps or sample code that reproduces the issue. Having reproducible issues is a prerequisite for contributors to be able to solve them.
-        If you include a minimal reproduction project below, you can detail how to use it here.
+        列出复现问题的步骤或示例代码。这是负责人能够解决问题的前提。
+        如果您在下方包含了一个最小复现项目，可以在此详细说明如何使用它。
     validations:
       required: true
 
   - type: textarea
     attributes:
-      label: Minimal reproduction project (MRP)
+      label: 最小复现项目
       description: |
-        - A small Godot project which reproduces the issue, with no unnecessary files included. Be sure to not include the `.godot` folder in the archive (but keep `project.godot`).
-        - Having an MRP is very important for contributors to be able to reproduce the bug in the same way that you are experiencing it. When testing a potential fix for the issue, contributors will use the MRP to validate that the fix is working as intended.
-        - If the reproduction steps are not project dependent (e.g. the bug is visible in a brand new project), you can write "N/A" in the field.
-        - Drag and drop a ZIP archive to upload it (max 10 MB). **Do not select another field until the project is done uploading.**
-        - **Note for C# users:** If your issue is *not* C#-specific, please upload a minimal reproduction project written in GDScript. This will make it easier for contributors to reproduce the issue locally as not everyone has a .NET setup available.
+        - 一个小型的 WeDot 项目，可以复现该问题，不包含不必要的文件。请确保不要在存档中包含 `.wedot` 文件夹（但保留 `project.wedot`）。
+        - 最小复现项目对于负责人能够以相同的方式复现 Bug 非常重要。当测试潜在的修复方案时，负责人将使用最小复现项目验证修复方案的作用是否符合预期。
+        - 如果复现步骤不是项目依赖的（例如，Bug 在全新项目中可见），您可以在此字段中写“不可用”。
+        - 拖放 ZIP 存档以上传（最大 10 MB）。**请在项目上传完成之前不要选择其他字段。**
+        - **C# 用户注意事项**：如果您的问题不是 C# 特有的，请上传一个用 GDScript 编写的最小复现项目。这将使负责人更容易在本地复现问题，因为并非所有人都有 .NET 环境。
     validations:
       required: true
