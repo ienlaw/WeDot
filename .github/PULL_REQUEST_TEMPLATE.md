@@ -1,8 +1,8 @@
 <!--
-Please target the `master` branch in priority.
+  请优先提交合并请求到 `main` 分支。
 
-Relevant fixes are cherry-picked for stable branches as needed by maintainers.
+  维护者会根据需要为稳定分支 cherry-picked 相关修复更改。
 
-To speed up the contribution process and avoid CI errors, please set up pre-commit hooks locally:
-https://docs.godotengine.org/en/latest/contributing/development/code_style_guidelines.html
--->
+  为了加快审核速度，避免在代码格式检查和引擎测试报错，请在本地部署 pre-commit hooks。详见文档：
+  https://docs.wedot.top/latest/contributing/development/code_style_guidelines.html
+ -->
